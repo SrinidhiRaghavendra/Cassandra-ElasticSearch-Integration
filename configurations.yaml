@@ -1,0 +1,42 @@
+#Cassandra details
+cassandra.address: "localhost"
+#cassandra.port:
+#cassandra.username:
+#cassandra.password:
+
+#Enter the flush interval in seconds.Default is 60 seconds
+flush_interval: 60
+
+#Give full path of the cassandra data directory
+#cassandra.data_dir: /path/to/cassandra/data/
+cassandra.data_dir: "/Users/sraghavendra/cassandra/apache-cassandra-2.1.12/data/"
+
+#Give full path of the cassandra.yaml file of cassandra in the following format.
+#cassandra.config.yaml: file:///path/to/cassandra.yaml
+cassandra.config.yaml: "file:///Users/sraghavendra/cassandra/apache-cassandra-2.1.12/conf/cassandra.yaml"
+
+#True if you want the system keyspaces also to be indexed.Default is false.
+system_tables.required: "false"
+
+#Specify keyspaces and their column families to be monitored
+#Default is all keyspaces except system tables.
+#For all tables of a keyspace,provide only the name of the keyspace.
+keyspaces:
+    -   name: "test_keyspace"
+        tables:
+            -   name: "demo_users"
+                columns:
+                    -   "age"
+            -   name: "test_users"
+                columns:
+                    -   "firstname"
+    -   name: "second_test"
+
+#Complete url of elasticsearch instance
+#elasticsearch.url: http://localhost:9300
+#Please provide the transport port number.
+elasticsearch.url: "http://localhost:9300"
+
+#name of the elasticsearch clustername.Default elasaticsearch
+elasticsearch.cluster.name: "elasticsearch"
+
